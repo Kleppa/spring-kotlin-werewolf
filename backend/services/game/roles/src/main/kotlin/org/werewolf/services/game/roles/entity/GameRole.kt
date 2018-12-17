@@ -1,4 +1,4 @@
-package org.werewolf.gamelogic.entity
+package org.werewolf.services.game.roles.entity
 
 import org.hibernate.validator.constraints.Range
 import javax.persistence.*

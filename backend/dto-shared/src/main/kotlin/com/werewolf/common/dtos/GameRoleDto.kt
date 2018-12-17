@@ -1,4 +1,4 @@
-package com.werewolf.common.dto-shared
+package com.werewolf.common.dtos
 
 import io.swagger.annotations.ApiModel
 

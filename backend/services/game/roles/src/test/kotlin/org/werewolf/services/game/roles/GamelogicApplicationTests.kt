@@ -1,4 +1,4 @@
-package org.werewolf.gamelogic
+package org.werewolf.services.game.roles
 
 import org.junit.Test
 import org.junit.runner.RunWith

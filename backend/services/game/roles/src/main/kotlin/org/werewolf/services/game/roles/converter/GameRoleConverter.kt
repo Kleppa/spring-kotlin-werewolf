@@ -1,7 +1,7 @@
-package org.werewolf.gamelogic.converter
+package org.werewolf.services.game.roles.converter
 
-import com.werewolf.dtos.GameRoleDto
-import org.werewolf.gamelogic.entity.GameRole
+import com.werewolf.common.dtos.GameRoleDto
+import org.werewolf.services.game.roles.entity.GameRole
 
 class GameRoleConverter {
     companion object {

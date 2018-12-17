@@ -1,15 +1,13 @@
-package org.werewolf.gamelogic.service
+package org.werewolf.services.game.roles.service
 
-import com.werewolf.dtos.GameRoleDto
+import com.werewolf.common.dtos.GameRoleDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
-import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
-import org.werewolf.gamelogic.converter.GameRoleConverter
-import org.werewolf.gamelogic.entity.GameRole
-import org.werewolf.gamelogic.repository.GameRolesRepository
-import java.util.Comparator.comparing
+import org.werewolf.services.game.roles.converter.GameRoleConverter
+import org.werewolf.services.game.roles.entity.GameRole
+import org.werewolf.services.game.roles.repository.GameRolesRepository
 
 @Service
 class GameRolesService {

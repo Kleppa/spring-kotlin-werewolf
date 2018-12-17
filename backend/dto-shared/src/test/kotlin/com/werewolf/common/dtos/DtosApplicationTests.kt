@@ -1,4 +1,4 @@
-package com.werewolf.dtos
+package com.werewolf.common.dtos
 
 import org.junit.Test
 import org.junit.runner.RunWith

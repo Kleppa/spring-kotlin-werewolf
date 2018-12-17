@@ -1,4 +1,4 @@
-package org.werewolf.gamelogic
+package org.werewolf.services.game.roles
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

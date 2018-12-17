@@ -1,15 +1,13 @@
-package org.werewolf.gamelogic.api
+package org.werewolf.services.game.roles.api
 
-import com.werewolf.dtos.GameRoleDto
+import com.werewolf.common.dtos.GameRoleDto
 import com.werewolf.utils.response.WrappedResponse
 import io.swagger.annotations.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import org.werewolf.gamelogic.converter.GameRoleConverter
-import org.werewolf.gamelogic.entity.GameRole
-import org.werewolf.gamelogic.service.GameRolesService
+import org.werewolf.services.game.roles.service.GameRolesService
 import java.lang.NumberFormatException
 
 @RestController
