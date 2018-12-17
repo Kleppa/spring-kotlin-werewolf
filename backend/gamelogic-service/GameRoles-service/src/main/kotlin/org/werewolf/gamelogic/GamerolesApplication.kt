@@ -11,7 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @SpringBootApplication
 @EnableSwagger2
-class GamelogicApplication{
+class GamerolesApplication{
     @Bean
     fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
@@ -23,6 +23,6 @@ class GamelogicApplication{
 }
 
 fun main(args: Array<String>) {
-    runApplication<GamelogicApplication>(*args)
+    runApplication<GamerolesApplication>(*args)
 }
 
