@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.werewolf</groupId>
-    <artifactId>gamelogic</artifactId>
+    <artifactId>roles</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gamelogic</name>
+    <name>roles</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
