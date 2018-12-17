@@ -8,9 +8,11 @@ import io.swagger.annotations.ApiResponse
 import io.swagger.annotations.ApiResponses
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import org.werewolf.gamelogic.service.GameRolesService
 
@@ -20,11 +22,16 @@ import org.werewolf.gamelogic.service.GameRolesService
 class GameRolesApi {
     @Autowired
     private lateinit var gameRolesService: GameRolesService
-    @ApiOperation("Fetch list of all roles in Werewolf")
-    @ApiResponses(ApiResponse(code = 200,message = "Fetched all roles"))
-    @GetMapping(path = ["/"])
-    fun getAllRoles():ResponseEntity<WrappedResponse<Page<GameRoleDto>>>{
 
-        return ResponseEntity.ok().build()
+    @ApiOperation("Fetch list of all roles in Werewolf")
+    @ApiResponses(ApiResponse(code = 200, message = "Fetched all roles"))
+    @GetMapping(path = ["/"])
+    fun getAllRoles(
+
+            @RequestParam(value = "page", defaultValue = "0", required = false) page: Int,
+            @RequestParam(value = "size", defaultValue = "10", required = false) size: Int
+    ): ResponseEntity<WrappedResponse<Page<GameRoleDto>>> {
+        val page = gameRolesService.findPaginated(page,size)
+                return ResponseEntity.ok().build()
     }
 }
