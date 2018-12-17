@@ -20,7 +20,14 @@ class GameRolesService {
         return page.map { gameRole: GameRole? ->  GameRoleConverter.transform(gameRole!!)}
     }
 
+    fun findById(id: Long): GameRoleDto? {
+        val data = gameRolesRepository.findById(id)
+        if (data.isPresent) {
+            return GameRoleConverter.transform(data.get())
 
+        }
+        return null
+    }
 
 
 }

@@ -8,7 +8,7 @@
         <version>2.1.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.werewolf</groupId>
+    <groupId>com.werewolf.common</groupId>
     <artifactId>utils</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>utils</name>
@@ -37,6 +37,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.20</version>
         </dependency>
     </dependencies>
 
