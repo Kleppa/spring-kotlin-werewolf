@@ -22,10 +22,6 @@ class GameRoleTestBase {
     protected var port = 0
     private val gameroleEntities = ArrayList<GameRole>()
 
-
-    @Test
-    fun contextLoads() {
-    }
     @Before
     @After
     fun clean() {
@@ -47,7 +43,7 @@ class GameRoleTestBase {
                                     name = "Role - $data",
                                     desc = (data * 10).toString(),
                                     abilities = setOf("Ability1","Ability2","Ability3"),
-                                        team = (1..3).shuffled().first()
+                                    team = (1..3).shuffled().first()
                             ))
                 }
         repository.run {
@@ -59,4 +55,3 @@ class GameRoleTestBase {
     }
 
 }
-

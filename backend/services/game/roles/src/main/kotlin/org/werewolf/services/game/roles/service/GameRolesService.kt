@@ -1,6 +1,6 @@
 package org.werewolf.services.game.roles.service
 
-import com.werewolf.common.dtos.GameRoleDto
+import org.werewolf.common.dtos.GameRoleDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest

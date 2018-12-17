@@ -1,7 +1,7 @@
 package org.werewolf.services.game.roles.api
 
-import com.werewolf.common.dtos.GameRoleDto
-import com.werewolf.utils.response.WrappedResponse
+import org.werewolf.common.dtos.GameRoleDto
+import org.werewolf.utils.response.WrappedResponse
 import io.swagger.annotations.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Page
@@ -12,14 +12,14 @@ import java.lang.NumberFormatException
 
 @RestController
 @Api("Api for fetching Game Roles for Werewolf")
-@RequestMapping(path = ["/api/roles"])
+@RequestMapping(path = ["/api/roles/"])
 class GameRolesApi {
     @Autowired
     private lateinit var gameRolesService: GameRolesService
 
     @ApiOperation("Fetch list of all roles in Werewolf")
     @ApiResponses(ApiResponse(code = 200, message = "Fetched all roles"))
-    @GetMapping(path = ["/"])
+    @GetMapping
     fun getAllRoles(
 
             @ApiParam("The page - offset you want")
@@ -36,7 +36,7 @@ class GameRolesApi {
 
     @ApiOperation("Fetches a element based on id")
     @ApiResponses(ApiResponse(code = 200, message = "ok"))
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     fun getById(
             @ApiParam("Id of the game role you want to fetch") @PathVariable("id") idFromPath: String
     ): ResponseEntity<WrappedResponse<List<GameRoleDto>>> {

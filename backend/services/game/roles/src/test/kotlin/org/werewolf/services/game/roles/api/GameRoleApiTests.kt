@@ -1,6 +1,6 @@
 package org.werewolf.services.game.roles.api
 
-import com.werewolf.common.dtos.GameRoleDto
+import org.werewolf.common.dtos.GameRoleDto
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 import org.hamcrest.CoreMatchers.equalTo
@@ -17,14 +17,14 @@ class GameRoleApiTests : GameRoleTestBase() {
                 .then()
                 .statusCode(200)
 
-       var extractedData = data.extract().jsonPath().getList("data.content", GameRoleDto::class.java)
+        var extractedData = data.extract().jsonPath().getList("data.content", GameRoleDto::class.java)
         assertThat(extractedData.size,equalTo(5))
         val getBiggerBatch = given()
                 .contentType(ContentType.JSON)
                 .get("/?page=1&size=10")
                 .then()
                 .statusCode(200)
-         extractedData = getBiggerBatch.extract().jsonPath().getList("data.content", GameRoleDto::class.java)
+        extractedData = getBiggerBatch.extract().jsonPath().getList("data.content", GameRoleDto::class.java)
         assertThat(extractedData.size,equalTo(10))
     }
     @Test

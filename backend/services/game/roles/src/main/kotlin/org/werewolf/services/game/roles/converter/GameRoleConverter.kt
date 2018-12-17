@@ -1,6 +1,6 @@
 package org.werewolf.services.game.roles.converter
 
-import com.werewolf.common.dtos.GameRoleDto
+import org.werewolf.common.dtos.GameRoleDto
 import org.werewolf.services.game.roles.entity.GameRole
 
 class GameRoleConverter {

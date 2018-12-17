@@ -16,7 +16,7 @@
         <version.kotlin>1.2.50</version.kotlin>
         <version.resteasy>3.1.3.Final</version.resteasy>
         <version.springboot>2.0.6.RELEASE</version.springboot>
-        <version.springcloud>Finchley.SR2</version.springcloud>
+        <version.springcloud>Finchley.SR1</version.springcloud>
         <version.springfox>2.9.2</version.springfox>
         <version.jacoco>0.8.2</version.jacoco>
         <version.testcontainers>1.9.1</version.testcontainers>
@@ -90,6 +90,7 @@
             <version>1.2.2.RELEASE</version>
 
         </dependency>
+
         <!--<dependency>-->
         <!--<groupId>org.springframework.boot</groupId>-->
         <!--<artifactId>spring-boot-starter-security</artifactId>-->
@@ -105,12 +106,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.werewolf.common</groupId>
-            <artifactId>dto-shared</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
         </dependency>
 
 
@@ -132,21 +127,67 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>com.werewolf</groupId>
+            <groupId>org.werewolf.common</groupId>
+            <artifactId>dto-shared</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.werewolf</groupId>
             <artifactId>utils</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
         <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+
         <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>roles</finalName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>${argLine} -Xms1024m -Xmx4096m</argLine>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>

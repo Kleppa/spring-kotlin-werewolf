@@ -8,9 +8,10 @@
         <version>2.1.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.werewolf.common</groupId>
+    <groupId>org.werewolf.common</groupId>
     <artifactId>dto-shared</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>dto-shared</name>
     <description>Data transfer objects</description>
 
@@ -47,7 +48,6 @@
 
     <build>
         <sourceDirectory>src/main/kotlin</sourceDirectory>
-        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
