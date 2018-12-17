@@ -12,10 +12,10 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-application-docker.yml
+
 # Generated files
 .idea/**/contentModel.xml
-.idea
+
 # Sensitive or high-churn files
 .idea/**/dataSources/
 .idea/**/dataSources.ids
@@ -93,6 +93,7 @@ fabric.properties
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+application.yml
 
 # Package Files #
 *.jar
