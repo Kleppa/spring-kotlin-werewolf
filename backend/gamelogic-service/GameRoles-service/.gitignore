@@ -94,6 +94,7 @@ fabric.properties
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 application.yml
+application-docker.yml
 
 # Package Files #
 *.jar
